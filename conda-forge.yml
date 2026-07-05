@@ -1,10 +1,8 @@
 bot:
   automerge: true
 build_platform:
+  linux_aarch64: linux_64
   linux_ppc64le: linux_64
-provider:
-  linux_aarch64: default
-  osx_arm64: default
 conda_build:
   error_overlinking: true
   pkg_format: '2'
@@ -12,17 +10,20 @@ conda_forge_output_validation: true
 github:
   branch_name: main
   tooling_branch_name: main
+provider:
+  linux_aarch64: default
+  osx_arm64: default
 test: native_and_emulated
 workflow_settings:
   build_workspace_dir:
-    - value: C:\bld
-      os: win
+  - os: win
+    value: C:\bld
   free_disk_space:
-    - value: quick
-      os: linux
+  - os: linux
+    value: quick
   pagefile_size:
-    - value: 10
-      os: linux
+  - os: linux
+    value: 10
   tools_install_dir:
-    - value: C:\Miniforge
-      os: win
+  - os: win
+    value: C:\Miniforge
